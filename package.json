@@ -1,0 +1,14 @@
+{
+  "author": "Jonah Snider <me@jonahsnider.ninja> (https://jonahsnider.ninja/)",
+  "description": "",
+  "devDependencies": {
+    "eslint": "5.7.0",
+    "eslint-config-amber": "2.0.0",
+    "jsdoc": "^3.5.5"
+  },
+  "keywords": [],
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "name": "rate-limit-keyv",
+  "version": "1.0.0"
+}
