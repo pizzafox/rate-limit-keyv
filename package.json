@@ -18,7 +18,7 @@
   "scripts": {
     "generate-docs": "npm run generate-docs:jsdoc && npm run generate-docs:parcel",
     "generate-docs:jsdoc": "jsdoc index.js",
-    "generate-docs:parcel": "parcel out/*.html --experimental-scope-hoisting"
+    "generate-docs:parcel": "parcel out/*.html"
   },
   "version": "1.0.0"
 }
