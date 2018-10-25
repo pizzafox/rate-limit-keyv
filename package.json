@@ -4,9 +4,17 @@
   "devDependencies": {
     "eslint": "5.7.0",
     "eslint-config-amber": "2.0.0",
-    "jsdoc": "3.5.5"
+    "jsdoc": "3.5.5",
+    "minami": "^1.2.3",
+    "parcel": "^1.10.3"
   },
-  "keywords": ["express", "keyv"],
+  "keywords": [
+    "express",
+    "keyv"
+  ],
+  "scripts": {
+    "build": "jsdoc index.js && parcel out/*.html --experimental-scope-hoisting"
+  },
   "license": "Apache-2.0",
   "main": "index.js",
   "name": "rate-limit-keyv",
