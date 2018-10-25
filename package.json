@@ -2,21 +2,23 @@
   "author": "Jonah Snider <me@jonahsnider.ninja> (https://jonahsnider.ninja/)",
   "description": "A Keyv based store for Express rate limit",
   "devDependencies": {
-    "eslint": "5.7.0",
-    "eslint-config-amber": "2.0.0",
-    "jsdoc": "3.5.5",
-    "minami": "^1.2.3",
-    "parcel": "^1.10.3"
+    "eslint": "~5.7.0",
+    "eslint-config-amber": "~2.0.0",
+    "jsdoc": "~3.5.5",
+    "minami": "~1.2.3",
+    "parcel": "~1.10.3"
   },
   "keywords": [
     "express",
     "keyv"
   ],
-  "scripts": {
-    "build": "jsdoc index.js && parcel out/*.html --experimental-scope-hoisting"
-  },
   "license": "Apache-2.0",
   "main": "index.js",
   "name": "rate-limit-keyv",
+  "scripts": {
+    "generate-docs": "npm run generate-docs:jsdoc && npm run generate-docs:parcel",
+    "generate-docs:jsdoc": "jsdoc index.js",
+    "generate-docs:parcel": "parcel out/*.html --experimental-scope-hoisting"
+  },
   "version": "1.0.0"
 }
