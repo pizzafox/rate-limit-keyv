@@ -14,8 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+
 /**
- * A store that uses Keyv.
+ * A [rate-limit store](https://github.com/nfriedly/express-rate-limit#stores) that
+ * uses [Keyv](https://github.com/lukechilds/keyv).
  */
 class KeyvStore {
   /**
@@ -24,8 +26,6 @@ class KeyvStore {
   constructor(keyv) {
     this.keyv = keyv;
 
-    keyv.on('error', err => console.error('KeyvStore connection error:', err));
-
     // Clear out old data (users might be using persistent data storage)
     keyv.clear();
   }
@@ -33,28 +33,44 @@ class KeyvStore {
 
   /**
    * Increments the value in the underlying store for the given key.
-   * @param {string} key The key to use as the unique identifier passed down from RateLimit.
-   * @param {Function} cb The callback issued when the underlying  store is finished.
+   * @async
+   * @param {string} key The key to use as the unique identifier passed down from RateLimit
+   * @param {Function} callback The callback issued when the underlying store is finished
+   * @returns {Promise<number>} Updated value of the key
    */
-  incr(key, cb) {
-    this.keyv.set(key, this.keyv.get(key) + 1);
-    cb(null, this.keyv.get(key));
+  async incr(key, callback) {
+    const prev = await this.keyv.get(key);
+    const updatedVal = prev + 1;
+
+    this.keyv.set(key, updatedVal);
+    callback(null, updatedVal);
   }
 
   /**
-   * Decrements the value in the underlying store for the given key. Used only when skipFailedRequests is true
+   * Decrements the value in the underlying store for the given key.
+   * Used only when `skipFailedRequests` is true.
+   * @async
    * @param {string} key The key to use as the unique identifier passed down from RateLimit.
+   * @returns {Promise<number>} Updated value of the key
    */
-  decrement(key) {
-    this.keyv.set(key, this.keyv.get(key) - 1);
+  async decrement(key) {
+    const prev = await this.keyv.get(key);
+    const updatedVal = prev - 1;
+
+    this.keyv.set(key, updatedVal)
+      .then(() => Promise.resolve(updatedVal))
+      .catch(err => Promise.reject(err));
   }
 
   /**
    * Resets a value with the given key.
    * @param {string} key The key to reset
+   * @returns {Promise} Promise that resolves when the key is reset or rejects
    */
   resetKey(key) {
-    this.keyv.delete(key);
+    this.keyv.delete(key)
+      .then(keyExists => Promise.resolve(keyExists))
+      .catch(err => Promise.reject(err));
   }
 }
 

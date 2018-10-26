@@ -76,7 +76,8 @@ typings/
 # Serverless directories
 .serverless
 
-# JSDoc
+# Built documentation
 out
+dist
 
 # End of https://www.gitignore.io/api/node

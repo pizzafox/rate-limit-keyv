@@ -7,7 +7,7 @@
 - SQLite
 - PostgreSQL
 - MySQL
-- Third-party storage adapters [(see Keyv docs)](https://github.com/lukechilds/keyv#third-party-storage-adapters)
+- Third-party storage adapters ([see Keyv docs](https://github.com/lukechilds/keyv#third-party-storage-adapters))
 
 ## Usage
 
@@ -21,7 +21,7 @@ const express = require('express');
 const app = express();
 
 const limiter = new RateLimit({
-  store: new KeyvStore(new Keyv())
+  store: new KeyvStore(new Keyv({ namespace: 'rate-limit' }))
 });
 
 app.use(limiter);
@@ -37,7 +37,7 @@ const express = require('express');
 const app = express();
 
 const limiter = new RateLimit({
-  store: new KeyvStore(new Keyv('redis://user:pass@localhost:6379'))
+  store: new KeyvStore(new Keyv('redis://user:pass@localhost:6379', { namespace: 'rate-limit' }))
 });
 
 app.use(limiter);
@@ -53,7 +53,7 @@ const express = require('express');
 const app = express();
 
 const limiter = new RateLimit({
-  store: new KeyvStore(new Keyv('mongodb://user:pass@localhost:27017/dbname'))
+  store: new KeyvStore(new Keyv('mongodb://user:pass@localhost:27017/dbname', { namespace: 'rate-limit' }))
 });
 
 app.use(limiter);
@@ -69,7 +69,7 @@ const express = require('express');
 const app = express();
 
 const limiter = new RateLimit({
-  store: new KeyvStore(new Keyv('sqlite://path/to/dbname.sqlite'))
+  store: new KeyvStore(new Keyv('sqlite://path/to/dbname.sqlite', { namespace: 'rate-limit' }))
 });
 
 app.use(limiter);
@@ -85,7 +85,7 @@ const express = require('express');
 const app = express();
 
 const limiter = new RateLimit({
-  store: new KeyvStore(new Keyv('postgresql://user:pass@localhost:5432/dbname'))
+  store: new KeyvStore(new Keyv('postgresql://user:pass@localhost:5432/dbname', { namespace: 'rate-limit' }))
 });
 
 app.use(limiter);
@@ -101,7 +101,7 @@ const express = require('express');
 const app = express();
 
 const limiter = new RateLimit({
-  store: new KeyvStore(new Keyv('mysql://user:pass@localhost:3306/dbname'))
+  store: new KeyvStore(new Keyv('mysql://user:pass@localhost:3306/dbname', { namespace: 'rate-limit' }))
 });
 
 app.use(limiter);
