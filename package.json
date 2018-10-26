@@ -1,5 +1,8 @@
 {
   "author": "Jonah Snider <me@jonahsnider.ninja> (https://jonahsnider.ninja/)",
+  "bugs": {
+    "url": "https://github.com/pizzafox/rate-limit-keyv/issues"
+  },
   "description": "A Keyv based store for Express rate limit",
   "devDependencies": {
     "eslint": "~5.7.0",
@@ -8,6 +11,7 @@
     "minami": "~1.2.3",
     "parcel": "~1.10.3"
   },
+  "homepage": "https://rate-limit-keyv.netlify.com/",
   "keywords": [
     "express",
     "keyv"
@@ -16,15 +20,20 @@
   "main": "index.js",
   "name": "rate-limit-keyv",
   "peerDependencies": {
-    "keyv": "~3.1.0",
-    "express-rate-limit": "~3.2.1"
+    "express-rate-limit": "~3.2.1",
+    "keyv": "~3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pizzafox/rate-limit-keyv.git"
   },
   "scripts": {
     "generate-docs": "npm run generate-docs:production",
-    "generate-docs:production": "npm run generate-docs:jsdoc && npm run generate-docs:parcel",
     "generate-docs:development": "npm run generate-docs:jsdoc && parcel out/*.html",
     "generate-docs:jsdoc": "jsdoc --configure .jsdoc.json --verbose",
-    "generate-docs:parcel": "parcel build out/*.html --experimental-scope-hoisting"
+    "generate-docs:parcel": "parcel build out/*.html --experimental-scope-hoisting",
+    "generate-docs:production": "npm run generate-docs:jsdoc && npm run generate-docs:parcel",
+    "lint": "eslint ."
   },
   "version": "1.0.0"
 }

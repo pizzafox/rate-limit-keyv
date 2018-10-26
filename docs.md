@@ -2,8 +2,6 @@
 
 A [rate-limit store](https://github.com/nfriedly/express-rate-limit#stores) that uses [Keyv](https://github.com/lukechilds/keyv).
 
-## [Documentation](https://rate-limit-keyv.netlify.com/)
-
 ## Back-end Support
 
 - Redis
