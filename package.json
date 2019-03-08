@@ -9,7 +9,7 @@
     "eslint-config-amber": "~2.0.0",
     "jsdoc": "~3.5.5",
     "minami": "~1.2.3",
-    "parcel": "~1.11.0"
+    "parcel": "~1.12.0"
   },
   "homepage": "https://rate-limit-keyv.netlify.com/",
   "keywords": [
