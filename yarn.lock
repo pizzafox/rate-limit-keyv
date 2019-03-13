@@ -3742,9 +3742,9 @@ pako@~1.0.5:
   integrity sha512-lQe48YPsMJAig+yngZ87Lus+NF+3mtu7DVOBu6b/gHO1YpKwIj5AWjZ/TOS7i46HD/UixzWb1zeWDZfGZ3iYcg==
 
 parcel@~1.12.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/parcel/-/parcel-1.12.0.tgz#4484a863c5cb39ac78e4de9df787251f8dffd59c"
-  integrity sha512-ls1SqXUcmDdK2lU/lVX+5hLZT1ZtcGdGy9sXKALBkS/gPGItDDk3O16oX3f4ofzk3ATlrWJcC87CepLy0eYVlQ==
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/parcel/-/parcel-1.12.1.tgz#88fae3b065cca47f708846ce142ee99c24578f6e"
+  integrity sha512-EPPf2f4lQVlB8grHNPs4tB+ofvLnCscgIOHv3XQF2S/Ep+ExY61oVrWRJiHCvh0jqB0ThWpp4D/asl54OaUF+w==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
