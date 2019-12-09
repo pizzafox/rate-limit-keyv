@@ -5,7 +5,7 @@
   },
   "description": "A Keyv based store for Express rate limit",
   "devDependencies": {
-    "eslint": "~5.16.0",
+    "eslint": "~6.7.2",
     "eslint-config-amber": "~2.0.0",
     "jsdoc": "~3.6.1",
     "minami": "~1.2.3",
