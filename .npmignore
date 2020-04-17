@@ -4,3 +4,4 @@ LICENSE
 .jsdoc.json
 package.json
 docs.md
+renovate.json
