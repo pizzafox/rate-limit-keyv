@@ -1,0 +1,6 @@
+.jsbeautifyrc
+LICENSE
+.eslintrc.json
+.jsdoc.json
+package.json
+docs.md
