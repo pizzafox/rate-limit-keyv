@@ -2129,10 +2129,10 @@ escodegen@~1.9.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-amber@2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-amber/-/eslint-config-amber-2.0.2.tgz#dc7847a109a55df66f70c1926411b837eeb84062"
-  integrity sha512-oDdktB0oYwFbE/rymH3ArkJTFF2k57maKsvo/Nri1I4a1+6bv9NSv/M0SMwVNOTjC7kZ/eqrd5q4q+jYax4KDQ==
+eslint-config-amber@2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-config-amber/-/eslint-config-amber-2.0.3.tgz#a9b3b8bf6fc40d90f9aaa943c1e1de190c206a63"
+  integrity sha512-/QflDXRsyULXqkymlyI7Y/r4gNq2nAHPJn4Vt3lzWz90lttl4Gy+ymfSh49QxYwtOoKRrxzrxtYkukUkPUfzdw==
 
 eslint-scope@^5.0.0:
   version "5.0.0"
