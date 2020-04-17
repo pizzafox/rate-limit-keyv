@@ -14,7 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-
 /**
  * A [rate-limit store](https://github.com/nfriedly/express-rate-limit#stores) that
  * uses [Keyv](https://github.com/lukechilds/keyv).
@@ -30,19 +29,18 @@ class KeyvStore {
     keyv.clear();
   }
 
-
   /**
    * Increments the value in the underlying store for the given key.
    * @async
    * @param {string} key The key to use as the unique identifier passed down from RateLimit
    * @param {Function} callback The callback issued when the underlying store is finished
-   * @returns {Promise<number>} Updated value of the key
+   * @returns {Promise<void>}
    */
   async incr(key, callback) {
     const prev = await this.keyv.get(key);
     const updatedVal = prev + 1;
 
-    this.keyv.set(key, updatedVal);
+    await this.keyv.set(key, updatedVal);
     callback(null, updatedVal);
   }
 
@@ -57,18 +55,18 @@ class KeyvStore {
     const prev = await this.keyv.get(key);
     const updatedVal = prev - 1;
 
-    this.keyv.set(key, updatedVal)
-      .then(() => Promise.resolve(updatedVal))
-      .catch(err => Promise.reject(err));
+    await this.keyv.set(key, updatedVal);
+    return updatedVal;
   }
 
   /**
    * Resets a value with the given key.
    * @param {string} key The key to reset
-   * @returns {Promise} Promise that resolves when the key is reset or rejects
+   * @returns {Promise<void>} Promise that resolves when the key is reset or rejects
    */
   resetKey(key) {
-    this.keyv.delete(key)
+    return this.keyv
+      .delete(key)
       .then(keyExists => Promise.resolve(keyExists))
       .catch(err => Promise.reject(err));
   }
