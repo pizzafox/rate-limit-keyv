@@ -7,7 +7,7 @@
   "devDependencies": {
     "eslint": "7.4.0",
     "eslint-config-amber": "2.0.3",
-    "jsdoc": "3.6.4",
+    "jsdoc": "3.6.5",
     "minami": "1.2.3",
     "parcel": "1.12.4"
   },
